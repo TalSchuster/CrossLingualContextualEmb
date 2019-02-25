@@ -45,7 +45,7 @@ Then, simply apply the alignment on the embedded tokens:
 embedded_text = self.aligning(embedded_text)
 ```
 
-Note that our alignments were done on the second layer of ELMo and we had to do a few hacks to freeze the layer weights in the AllenNLP repo. We will release that code soon. However, the alignment can be done for each layer separately to preserve the original weighted sum of layers in the ELMo embedder.
+Note that our alignments were done on the second layer of ELMo and we had to do a few hacks to freeze the layer weights in the AllenNLP repo. We will release that code soon. However, note that an alignment can be learned and applied for each layer separately to preserve the original weighted sum of layers in the ELMo embedder.
 
 
 
