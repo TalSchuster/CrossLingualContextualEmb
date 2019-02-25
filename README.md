@@ -40,7 +40,7 @@ self.aligning.weight = torch.nn.Parameter(self.aligning_matrix)
 self.aligning.weight.requires_grad = False
 ```
 
-Then, simply apply the alignment on the embedded tokens:
+Then, simply apply the alignment on the embedded tokens in the `forward()` pass:
 ```
 embedded_text = self.aligning(embedded_text)
 ```
