@@ -1,7 +1,7 @@
 # CrossLingualELMo
 Cross-Lingual Alignment of Contextual Word Embeddings
 
-This repo will contain the code and models for the NAACL19 paper - Cross-Lingual Alignment of Contextual Word Embeddings,  with Applications to Zero-shot Dependency Parsing (TODO -link)
+This repo will contain the code and models for the NAACL19 paper - [Cross-Lingual Alignment of Contextual Word Embeddings,  with Applications to Zero-shot Dependency Parsing](https://arxiv.org/abs/1902.09492)
 
 More pieces of the code will be released soon. Meanwhile, the ELMo models for several languages with their alignment matrices are provided here. 
 
@@ -16,10 +16,10 @@ The following are models were trained on Wikipedia and the second layer was alig
 | ------------- |:-------------:| :-----:|
 | en     | [weights.hdf5](https://www.dropbox.com/s/1h62kc1qdcuyy2u/en_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/nufj4pxxgv5838r/en_best_mapping.pth?dl=0) |
 | es     | [weights.hdf5](https://www.dropbox.com/s/ygfjm7zmufl5gu2/es_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/6kqot8ssy66d5u0/es_best_mapping.pth?dl=0) |
-| fr     | [weights.hdf5]()(add) | [best_mapping.pth]()(add) |
-| it     | [weights.hdf5]()(add) | [best_mapping.pth]()(add) |
+| fr     | [weights.hdf5](https://www.dropbox.com/s/mm64goxb8wbawhj/fr_weights.hdf5?dl=0) | [best_mapping.pth]()(add) |
+| it     | [weights.hdf5](https://www.dropbox.com/s/owfou7coi04dyxf/it_weights.hdf5?dl=0) | [best_mapping.pth]()(add) |
 | pt     | [weights.hdf5](https://www.dropbox.com/s/ul82jsal1khfw5b/pt_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth?dl=0) |
-| sv     | [weights.hdf5]()(add) | [best_mapping.pth]()(add) |
+| sv     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5?dl=0) | [best_mapping.pth]()(add) |
 
 
 options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json?dl=0)
@@ -51,4 +51,4 @@ Note that our alignments were done on the second layer of ELMo and we had to do 
 
 # Citation
 
-TODO
+If you find this repo useful, please cite our paper.
