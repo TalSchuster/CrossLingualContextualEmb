@@ -16,10 +16,11 @@ The following are models were trained on Wikipedia and the second layer was alig
 | ------------- |:-------------:| :-----:|
 | en     | [weights.hdf5](https://www.dropbox.com/s/1h62kc1qdcuyy2u/en_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/nufj4pxxgv5838r/en_best_mapping.pth?dl=0) |
 | es     | [weights.hdf5](https://www.dropbox.com/s/ygfjm7zmufl5gu2/es_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/6kqot8ssy66d5u0/es_best_mapping.pth?dl=0) |
-| fr     | [weights.hdf5](https://www.dropbox.com/s/mm64goxb8wbawhj/fr_weights.hdf5?dl=0) | [best_mapping.pth]()(add) |
-| it     | [weights.hdf5](https://www.dropbox.com/s/owfou7coi04dyxf/it_weights.hdf5?dl=0) | [best_mapping.pth]()(add) |
+| fr     | [weights.hdf5](https://www.dropbox.com/s/mm64goxb8wbawhj/fr_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/0zdlanjhajlgflm/fr_best_mapping.pth?dl=0) |
+| it     | [weights.hdf5](https://www.dropbox.com/s/owfou7coi04dyxf/it_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/gg985snnhajhm5i/it_best_mapping.pth?dl=0) |
 | pt     | [weights.hdf5](https://www.dropbox.com/s/ul82jsal1khfw5b/pt_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth?dl=0) |
-| sv     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5?dl=0) | [best_mapping.pth]()(add) |
+| sv     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth?dl=0) |
+| de    | to upload | to upload |
 
 
 options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json?dl=0)
@@ -52,3 +53,13 @@ Note that our alignments were done on the second layer of ELMo and we had to do 
 # Citation
 
 If you find this repo useful, please cite our paper.
+
+```
+@article{Schuster2019,
+title = {Cross-Lingual Alignment of Contextual Word Embeddings, with Applications to Zero-shot Dependency Parsing},
+author = {Schuster, Tal and Ram, Ori and Barzilay, Regina and Globerson, Amir},
+eprint = {arXiv:1902.09492v1},
+url = {https://arxiv.org/pdf/1902.09492.pdf},
+year = {2019}
+}
+```
