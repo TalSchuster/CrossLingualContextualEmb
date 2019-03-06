@@ -20,7 +20,7 @@ The following are models were trained on Wikipedia and the second layer was alig
 | it     | [weights.hdf5](https://www.dropbox.com/s/owfou7coi04dyxf/it_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/gg985snnhajhm5i/it_best_mapping.pth?dl=0) |
 | pt     | [weights.hdf5](https://www.dropbox.com/s/ul82jsal1khfw5b/pt_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth?dl=0) |
 | sv     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth?dl=0) |
-| de    | to upload | to upload |
+| de    | [weights.hdf5](https://www.dropbox.com/s/2kbjnvb12htgqk8/de_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/u9cg19o81lpm0h0/de_best_mapping.pth?dl=0) |
 
 
 options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json?dl=0)
