@@ -1,0 +1,10 @@
+mkdir models
+mkdir models/align
+cd models/align
+wget https://www.dropbox.com/s/nufj4pxxgv5838r/en_best_mapping.pth
+wget https://www.dropbox.com/s/6kqot8ssy66d5u0/es_best_mapping.pth
+wget https://www.dropbox.com/s/0zdlanjhajlgflm/fr_best_mapping.pth
+wget https://www.dropbox.com/s/gg985snnhajhm5i/it_best_mapping.pth
+wget https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth
+wget https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth
+wget https://www.dropbox.com/s/u9cg19o81lpm0h0/de_best_mapping.pth
