@@ -14,18 +14,40 @@ The following are models were trained on Wikipedia and the second layer was alig
 
 | Language        | Model weights | Aligning matrix  |
 | ------------- |:-------------:| :-----:|
-| en     | [weights.hdf5](https://www.dropbox.com/s/1h62kc1qdcuyy2u/en_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/nufj4pxxgv5838r/en_best_mapping.pth?dl=0) |
-| es     | [weights.hdf5](https://www.dropbox.com/s/ygfjm7zmufl5gu2/es_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/6kqot8ssy66d5u0/es_best_mapping.pth?dl=0) |
-| fr     | [weights.hdf5](https://www.dropbox.com/s/mm64goxb8wbawhj/fr_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/0zdlanjhajlgflm/fr_best_mapping.pth?dl=0) |
-| it     | [weights.hdf5](https://www.dropbox.com/s/owfou7coi04dyxf/it_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/gg985snnhajhm5i/it_best_mapping.pth?dl=0) |
-| pt     | [weights.hdf5](https://www.dropbox.com/s/ul82jsal1khfw5b/pt_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth?dl=0) |
-| sv     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth?dl=0) |
-| de    | [weights.hdf5](https://www.dropbox.com/s/2kbjnvb12htgqk8/de_weights.hdf5?dl=0) | [best_mapping.pth](https://www.dropbox.com/s/u9cg19o81lpm0h0/de_best_mapping.pth?dl=0) |
+| en     | [weights.hdf5](https://www.dropbox.com/s/1h62kc1qdcuyy2u/en_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/nufj4pxxgv5838r/en_best_mapping.pth) |
+| es     | [weights.hdf5](https://www.dropbox.com/s/ygfjm7zmufl5gu2/es_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/6kqot8ssy66d5u0/es_best_mapping.pth) |
+| fr     | [weights.hdf5](https://www.dropbox.com/s/mm64goxb8wbawhj/fr_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/0zdlanjhajlgflm/fr_best_mapping.pth) |
+| it     | [weights.hdf5](https://www.dropbox.com/s/owfou7coi04dyxf/it_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/gg985snnhajhm5i/it_best_mapping.pth) |
+| pt     | [weights.hdf5](https://www.dropbox.com/s/ul82jsal1khfw5b/pt_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth) |
+| sv     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth) |
+| de     | [weights.hdf5](https://www.dropbox.com/s/2kbjnvb12htgqk8/de_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/u9cg19o81lpm0h0/de_best_mapping.pth) |
 
 
-options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json?dl=0)
+options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json)
+
+To download all the ELMo models in the table, use `get_models.sh`
+
+To download all of the alignment matrices in the table, use `get_alignments.sh`.
+
+### Generating anchors
+
+Use the `gen_anchors.py` script to generate your own anchors. You will need a trained ELMo model, text files with one sentence per line, and vocab file with token per line containing the tokens that you wish to calculate for.
+run `gen_anchors.py -h` for more details.
 
 ## Usage
+
+### Generating aligned contextual embeddings
+
+Given the output of a specific layer from ELMo (the contextual embeddings), run:
+```
+aligning  = torch.load(aligning_matrix_path)
+aligned_embeddings = np.matmul(embeddings, aligning.transpose())
+```
+
+An example can be seen in `demo.py`. 
+
+
+### Using in a model
 
 The models can be used with the [AllenNLP](https://allennlp.org) framework by simply using any model with ELMo embeddings and replacing the paths in the configuration with our provided models.
 
@@ -34,7 +56,7 @@ Each ELMo model was trained on Wikipedia of the relevant language. To align the 
 Load the alignment matrix in the `__init__()` function:
 
 ```
-aligning_matrix_path = ...
+aligning_matrix_path = ... (pth file)
 self.aligning_matrix = torch.FloatTensor(torch.load(aligning_matrix_path))
 self.aligning = torch.nn.Linear(self.aligning_matrix[0], self.aligning_matrix[1], bias=False)
 self.aligning.weight = torch.nn.Parameter(self.aligning_matrix)

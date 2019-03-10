@@ -13,7 +13,7 @@ parser.add_argument(
     '--elmo_weights_path',
     type=str,
     default='models/$l_weights.hdf5',
-    help="Path to elmo weights files - use $l as a placeholder for language")
+    help="Path to elmo weights files - use $l as a placeholder for language.")
 parser.add_argument(
     '--elmo_options_path',
     type=str,
@@ -23,7 +23,7 @@ parser.add_argument(
     '--align_path',
     type=str,
     default='models/align/$l_best_mapping.pth',
-    help="Path to elmo options file. n_characters in the file should be 262")
+    help="Path to the aligning matrix saved in a pyTorch format. Use $l as a placeholder for language.")
 parser.add_argument(
     '-l1',
     '--language1',
@@ -75,8 +75,8 @@ args = parser.parse_args()
 
 def parse_config(args):
     '''
-    replace $l with args.lang
-    print args
+    Replaces $l for the two languages.
+    Prints the args
     '''
 
     new_args = copy.deepcopy(args)
@@ -150,6 +150,7 @@ if __name__ == '__main__':
     align2 = torch.load(args.align_path_l2)
     s2_embeds_aligned = np.matmul(s2_embeds, align2.transpose())
 
+    # Analyse
     print("--- Before alignment:")
     analyze_sents(s1_embeds, s2_embeds, sent1_tokens, sent2_tokens, w1_ind, w2_ind)
 
