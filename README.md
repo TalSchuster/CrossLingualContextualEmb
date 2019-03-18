@@ -3,7 +3,7 @@ Cross-Lingual Alignment of Contextual Word Embeddings
 
 This repo will contain the code and models for the NAACL19 paper - [Cross-Lingual Alignment of Contextual Word Embeddings,  with Applications to Zero-shot Dependency Parsing](https://arxiv.org/abs/1902.09492)
 
-More pieces of the code will be released soon. Meanwhile, the ELMo models for several languages with their alignment matrices are provided here. 
+More pieces of the code will be released soon.
 
 ## Updates:
 
@@ -77,9 +77,9 @@ allennlp train training_config/multilang_dependency_parser.jsonnet -s path_to_ou
 ```
 
 
-### Using in a any model
+### Using in any model
 
-The models can be used with the [AllenNLP](https://allennlp.org) framework by simply using any model with ELMo embeddings and replacing the paths in the configuration with our provided models.
+The aligments can be used with the [AllenNLP](https://allennlp.org) framework by simply using any model with ELMo embeddings and replacing the paths in the configuration with our provided models.
 
 Each ELMo model was trained on Wikipedia of the relevant language. To align the models, you will need to add the following code to your model:
 
@@ -97,7 +97,7 @@ Then, simply apply the alignment on the embedded tokens in the `forward()` pass:
 embedded_text = self.aligning(embedded_text)
 ```
 
-Note that our alignments were done on the second layer of ELMo and we had to do a few hacks to freeze the layer weights in the AllenNLP repo. We will release that code soon. However, note that an alignment can be learned and applied for each layer separately to preserve the original weighted sum of layers in the ELMo embedder.
+Note that our alignments were done on the second layer of ELMo but it can be learned and applied for each layer separately to preserve the original weighted sum of layers in the ELMo embedder. To fix the weighted sum across languages, use fixed parameters for `scalar_mix` (see our multi-lingual parser for an example).
 
 
 
