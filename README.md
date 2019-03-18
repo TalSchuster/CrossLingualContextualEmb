@@ -5,6 +5,10 @@ This repo will contain the code and models for the NAACL19 paper - [Cross-Lingua
 
 More pieces of the code will be released soon. Meanwhile, the ELMo models for several languages with their alignment matrices are provided here. 
 
+## Updates:
+
+* The multi-lingual parser code is now available at this [allennlp fork](https://github.com/TalSchuster/allennlp-MultiLang) (`requirements.txt` file of this repo is updated accordingly). See more details in the **Usage** section below.
+
 
 # Aligned Multi Lingual Deep Contextual Word Embeddings
 
@@ -46,8 +50,34 @@ aligned_embeddings = np.matmul(embeddings, aligning.transpose())
 
 An example can be seen in `demo.py`. 
 
+### Replicating the zero-shot cross-lingual dependency parsing results
 
-### Using in a model
+1. Create an environment to install our fork of allennlp:
+
+```
+virtualenv -p /usr/bin/python3.6 allennlp_multilang
+```
+or, if you are using conda:
+```
+conda create -n allennlp_multilang python=3.6
+```
+
+2. Activate the environment and install:
+
+```
+source allennlp_multilang/bin/activate
+pip install -r requirements.txt
+```
+
+3. Download the [uni-dep-tb](https://github.com/ryanmcd/uni-dep-tb) dataset (version 2) and follow the instructions to generate the [English PTB data](https://catalog.ldc.upenn.edu/LDC99T42)
+4. Update the `allen_configs/multilang_dependency_parser.jsonnet` file with the path to dataset.
+5. Train the model (the provided configuration is for 'es' as a target language):
+```
+allennlp train training_config/multilang_dependency_parser.jsonnet -s path_to_output_dir
+```
+
+
+### Using in a any model
 
 The models can be used with the [AllenNLP](https://allennlp.org) framework by simply using any model with ELMo embeddings and replacing the paths in the configuration with our provided models.
 
@@ -59,8 +89,7 @@ Load the alignment matrix in the `__init__()` function:
 aligning_matrix_path = ... (pth file)
 self.aligning_matrix = torch.FloatTensor(torch.load(aligning_matrix_path))
 self.aligning = torch.nn.Linear(self.aligning_matrix[0], self.aligning_matrix[1], bias=False)
-self.aligning.weight = torch.nn.Parameter(self.aligning_matrix)
-self.aligning.weight.requires_grad = False
+self.aligning.weight = torch.nn.Parameter(self.aligning_matrix, requires_grad=False)
 ```
 
 Then, simply apply the alignment on the embedded tokens in the `forward()` pass:
