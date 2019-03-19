@@ -29,13 +29,14 @@ The following are models were trained on Wikipedia and the second layer was alig
 
 options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json)
 
-To download all the ELMo models in the table, use `get_models.sh`
+* To download all the ELMo models in the table, use `get_models.sh`
 
-To download all of the alignment matrices in the table, use `get_alignments.sh`.
+* To download all of the alignment matrices in the table, use `get_alignments.sh`.
 
+* Alternatively, If you are interested in applying it in an Allennlp model, you can just add the path to the configuration (check the examples in `allen_configs`)
 ### Generating anchors
 
-Use the `gen_anchors.py` script to generate your own anchors. You will need a trained ELMo model, text files with one sentence per line, and vocab file with token per line containing the tokens that you wish to calculate for.
+In order to generate your own anchors - use the `gen_anchors.py` script to generate your own anchors. You will need a trained ELMo model, text files with one sentence per line, and vocab file with token per line containing the tokens that you wish to calculate for.
 run `gen_anchors.py -h` for more details.
 
 ## Usage
