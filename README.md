@@ -107,10 +107,10 @@ Note that our alignments were done on the second layer of ELMo but it can be lea
 If you find this repo useful, please cite our paper.
 
 ```
-@article{Schuster2019,
+@InProceedings{Schuster2019,
 title = {Cross-Lingual Alignment of Contextual Word Embeddings, with Applications to Zero-shot Dependency Parsing},
 author = {Schuster, Tal and Ram, Ori and Barzilay, Regina and Globerson, Amir},
-eprint = {arXiv:1902.09492v1},
+booktitle = {Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
 url = {https://arxiv.org/pdf/1902.09492.pdf},
 year = {2019}
 }
