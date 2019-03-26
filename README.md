@@ -14,7 +14,7 @@ More pieces of the code will be released soon.
 
 ## Embeddings
 
-The following are models were trained on Wikipedia and the second layer was aligned to English:
+The following models were trained on Wikipedia. We provide the alignment of the first LSTM output of ELMo to English (more alignments will come soon)
 
 | Language        | Model weights | Aligning matrix  |
 | ------------- |:-------------:| :-----:|
