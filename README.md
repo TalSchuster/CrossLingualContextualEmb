@@ -7,6 +7,10 @@ More pieces of the code will be released soon.
 
 ## Updates:
 
+* A script to compute anchors for a Bert model is now available.
+
+* We are working on merging the Multilingual ELMo to the AllenNLP framework. Hopefully we will get to finish it soon.
+
 * The multi-lingual parser code is now available at this [allennlp fork](https://github.com/TalSchuster/allennlp-MultiLang) (`requirements.txt` file of this repo is updated accordingly). See more details in the **Usage** section below.
 
 
@@ -18,13 +22,13 @@ The following models were trained on Wikipedia. We provide the alignment of the 
 
 | Language        | Model weights | Aligning matrix  |
 | ------------- |:-------------:| :-----:|
-| en     | [weights.hdf5](https://www.dropbox.com/s/1h62kc1qdcuyy2u/en_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/nufj4pxxgv5838r/en_best_mapping.pth) |
-| es     | [weights.hdf5](https://www.dropbox.com/s/ygfjm7zmufl5gu2/es_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/6kqot8ssy66d5u0/es_best_mapping.pth) |
-| fr     | [weights.hdf5](https://www.dropbox.com/s/mm64goxb8wbawhj/fr_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/0zdlanjhajlgflm/fr_best_mapping.pth) |
-| it     | [weights.hdf5](https://www.dropbox.com/s/owfou7coi04dyxf/it_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/gg985snnhajhm5i/it_best_mapping.pth) |
-| pt     | [weights.hdf5](https://www.dropbox.com/s/ul82jsal1khfw5b/pt_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth) |
-| sv     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth) |
-| de     | [weights.hdf5](https://www.dropbox.com/s/2kbjnvb12htgqk8/de_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/u9cg19o81lpm0h0/de_best_mapping.pth) |
+| English     | [weights.hdf5](https://www.dropbox.com/s/1h62kc1qdcuyy2u/en_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/nufj4pxxgv5838r/en_best_mapping.pth) |
+| Spanish     | [weights.hdf5](https://www.dropbox.com/s/ygfjm7zmufl5gu2/es_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/6kqot8ssy66d5u0/es_best_mapping.pth) |
+| French     | [weights.hdf5](https://www.dropbox.com/s/mm64goxb8wbawhj/fr_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/0zdlanjhajlgflm/fr_best_mapping.pth) |
+| Italian     | [weights.hdf5](https://www.dropbox.com/s/owfou7coi04dyxf/it_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/gg985snnhajhm5i/it_best_mapping.pth) |
+| Portuguese     | [weights.hdf5](https://www.dropbox.com/s/ul82jsal1khfw5b/pt_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth) |
+| Swedish     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth) |
+| German     | [weights.hdf5](https://www.dropbox.com/s/2kbjnvb12htgqk8/de_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/u9cg19o81lpm0h0/de_best_mapping.pth) |
 
 
 options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json)
