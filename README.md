@@ -112,10 +112,17 @@ If you find this repo useful, please cite our paper.
 
 ```
 @InProceedings{Schuster2019,
-title = {Cross-Lingual Alignment of Contextual Word Embeddings, with Applications to Zero-shot Dependency Parsing},
-author = {Schuster, Tal and Ram, Ori and Barzilay, Regina and Globerson, Amir},
-booktitle = {Proceedings of the Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
-url = {https://arxiv.org/pdf/1902.09492.pdf},
-year = {2019}
+    title = "Cross-Lingual Alignment of Contextual Word Embeddings, with Applications to Zero-shot Dependency Parsing",
+    author = "Schuster, Tal  and
+      Ram, Ori  and
+      Barzilay, Regina  and
+      Globerson, Amir",
+    booktitle = "Proceedings of the 2019 Conference of the North {A}merican Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)",
+    month = jun,
+    year = "2019",
+    address = "Minneapolis, Minnesota",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/N19-1162",
+    pages = "1599--1613"
 }
 ```
