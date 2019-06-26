@@ -9,9 +9,11 @@ More pieces of the code will be released soon.
 
 * A script to compute anchors for a Bert model is now available.
 
-* We are working on merging the Multilingual ELMo to the AllenNLP framework. Hopefully we will get to finish it soon.
+* The Multilingual ELMo is now merged to the [AllenNLP framework](https://github.com/allenai/allennlp). You can install their repo from source or wait for their next release. Anchors for other models can be computed using the code here.
 
-* The multi-lingual parser code is now available at this [allennlp fork](https://github.com/TalSchuster/allennlp-MultiLang) (`requirements.txt` file of this repo is updated accordingly). See more details in the **Usage** section below.
+* <del> We are working on merging the Multilingual ELMo to the AllenNLP framework. Hopefully we will get to finish it soon.
+
+* <del> The multi-lingual parser code is now available at this [allennlp fork](https://github.com/TalSchuster/allennlp-MultiLang) (`requirements.txt` file of this repo is updated accordingly). See more details in the **Usage** section below.
 
 
 # Aligned Multi Lingual Deep Contextual Word Embeddings
