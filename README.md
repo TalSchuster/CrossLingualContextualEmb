@@ -20,18 +20,19 @@ More pieces of the code will be released soon.
 
 ## Embeddings
 
-The following models were trained on Wikipedia. We provide the alignment of the first LSTM output of ELMo to English (more alignments will come soon)
+The following models were trained on Wikipedia. We provide the alignment of the first LSTM output of ELMo to English. The English file contains the identity matrix divided by the average norm for that layer.
 
-| Language        | Model weights | Aligning matrix  |
+| Language        | Model weights | Aligning matrix (First LSTM layer) *  |
 | ------------- |:-------------:| :-----:|
-| English     | [weights.hdf5](https://www.dropbox.com/s/1h62kc1qdcuyy2u/en_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/nufj4pxxgv5838r/en_best_mapping.pth) |
-| Spanish     | [weights.hdf5](https://www.dropbox.com/s/ygfjm7zmufl5gu2/es_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/6kqot8ssy66d5u0/es_best_mapping.pth) |
-| French     | [weights.hdf5](https://www.dropbox.com/s/mm64goxb8wbawhj/fr_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/0zdlanjhajlgflm/fr_best_mapping.pth) |
-| Italian     | [weights.hdf5](https://www.dropbox.com/s/owfou7coi04dyxf/it_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/gg985snnhajhm5i/it_best_mapping.pth) |
-| Portuguese     | [weights.hdf5](https://www.dropbox.com/s/ul82jsal1khfw5b/pt_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth) |
-| Swedish     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth) |
-| German     | [weights.hdf5](https://www.dropbox.com/s/2kbjnvb12htgqk8/de_weights.hdf5) | [best_mapping.pth](https://www.dropbox.com/s/u9cg19o81lpm0h0/de_best_mapping.pth) |
+| English     | [weights.hdf5](https://www.dropbox.com/s/1h62kc1qdcuyy2u/en_weights.hdf5) | [en_best_mapping.pth](https://www.dropbox.com/s/nufj4pxxgv5838r/en_best_mapping.pth) |
+| Spanish     | [weights.hdf5](https://www.dropbox.com/s/ygfjm7zmufl5gu2/es_weights.hdf5) | [es_best_mapping.pth](https://www.dropbox.com/s/6kqot8ssy66d5u0/es_best_mapping.pth) |
+| French     | [weights.hdf5](https://www.dropbox.com/s/mm64goxb8wbawhj/fr_weights.hdf5) | [fr_best_mapping.pth](https://www.dropbox.com/s/0zdlanjhajlgflm/fr_best_mapping.pth) |
+| Italian     | [weights.hdf5](https://www.dropbox.com/s/owfou7coi04dyxf/it_weights.hdf5) | [it_best_mapping.pth](https://www.dropbox.com/s/gg985snnhajhm5i/it_best_mapping.pth) |
+| Portuguese     | [weights.hdf5](https://www.dropbox.com/s/ul82jsal1khfw5b/pt_weights.hdf5) | [pt_best_mapping.pth](https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth) |
+| Swedish     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5) | [sv_best_mapping.pth](https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth) |
+| German     | [weights.hdf5](https://www.dropbox.com/s/2kbjnvb12htgqk8/de_weights.hdf5) | [de_best_mapping.pth](https://www.dropbox.com/s/u9cg19o81lpm0h0/de_best_mapping.pth) |
 
+\* Alignments for layer 0 (pre LSTM) and layer 2 (post LSTM) for all above languages - [alignments_0_2.zip](https://www.dropbox.com/s/ymnyptj3lupvcw7/alignings_0_2.zip)
 
 options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json)
 
@@ -104,7 +105,6 @@ Then, simply apply the alignment on the embedded tokens in the `forward()` pass:
 embedded_text = self.aligning(embedded_text)
 ```
 
-Note that our alignments were done on the second layer of ELMo but it can be learned and applied for each layer separately to preserve the original weighted sum of layers in the ELMo embedder. To fix the weighted sum across languages, use fixed parameters for `scalar_mix` (see our multi-lingual parser for an example).
 
 
 
