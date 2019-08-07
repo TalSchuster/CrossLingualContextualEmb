@@ -7,7 +7,9 @@ More pieces of the code will be released soon.
 
 ## Updates:
 
-* A script to compute anchors for a Bert model is now available.
+* Alignment matrices for all layers of ELMO.
+
+* A script to compute anchors for a BERT model is now available.
 
 * The Multilingual ELMo is now merged to the [AllenNLP framework](https://github.com/allenai/allennlp). You can install their repo from source or wait for their next release. Anchors for other models can be computed using the code here.
 
