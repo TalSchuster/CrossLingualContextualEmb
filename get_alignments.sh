@@ -8,3 +8,5 @@ wget https://www.dropbox.com/s/gg985snnhajhm5i/it_best_mapping.pth
 wget https://www.dropbox.com/s/skdfz6zfud24iup/pt_best_mapping.pth
 wget https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth
 wget https://www.dropbox.com/s/u9cg19o81lpm0h0/de_best_mapping.pth
+wget https://www.dropbox.com/s/ymnyptj3lupvcw7/alignments_0_2.zip
+unzip alignments_0_2.zip
