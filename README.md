@@ -34,7 +34,7 @@ The following models were trained on Wikipedia. We provide the alignment of the 
 | Swedish     | [weights.hdf5](https://www.dropbox.com/s/boptz21zrs4h3nw/sv_weights.hdf5) | [sv_best_mapping.pth](https://www.dropbox.com/s/o7v64hciyifvs8k/sv_best_mapping.pth) |
 | German     | [weights.hdf5](https://www.dropbox.com/s/2kbjnvb12htgqk8/de_weights.hdf5) | [de_best_mapping.pth](https://www.dropbox.com/s/u9cg19o81lpm0h0/de_best_mapping.pth) |
 
-\* Alignments for layer 0 (pre LSTM) and layer 2 (post LSTM) for all above languages - [alignments_0_2.zip](https://www.dropbox.com/s/ymnyptj3lupvcw7/alignings_0_2.zip)
+\* Alignments for layer 0 (pre LSTM) and layer 2 (post LSTM) for all above languages - [alignments_0_2.zip](https://www.dropbox.com/s/ymnyptj3lupvcw7/alignments_0_2.zip)
 
 options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json)
 
