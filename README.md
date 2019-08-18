@@ -36,6 +36,8 @@ The following models were trained on Wikipedia. We provide the alignment of the 
 
 \* Alignments for layer 0 (pre LSTM) and layer 2 (post LSTM) for all above languages - [alignments_0_2.zip](https://www.dropbox.com/s/ymnyptj3lupvcw7/alignments_0_2.zip)
 
+* Unsupervised alignments for layer 1 - [alignments_unsupervised.zip](https://www.dropbox.com/s/sgi86uc8stu70bg/alignments_unsupervised.zip)
+
 options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json)
 
 * To download all the ELMo models in the table, use `get_models.sh`
