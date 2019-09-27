@@ -1,1 +1,1 @@
--e git+http://github.com/TalSchuster/allennlp-MultiLang.git#egg=allennlp
+allennlp>=0.8.5
