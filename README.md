@@ -7,11 +7,13 @@ More pieces of the code will be released soon.
 
 ## Updates:
 
+* Computed anchors for English (to help with the alignment computation for more languages)
+
 * Alignment matrices for all layers of ELMO.
 
 * A script to compute anchors for a BERT model is now available.
 
-* The Multilingual ELMo is now merged to the [AllenNLP framework](https://github.com/allenai/allennlp). You can install their repo from source or wait for their next release. Anchors for other models can be computed using the code here.
+* The Multilingual ELMo is now merged to the [AllenNLP framework](https://github.com/allenai/allennlp) (version >= 0.8.5). Anchors for other models can be computed using the code here.
 
 * <del> We are working on merging the Multilingual ELMo to the AllenNLP framework. Hopefully we will get to finish it soon.
 
@@ -24,7 +26,7 @@ More pieces of the code will be released soon.
 
 The following models were trained on Wikipedia. We provide the alignment of the first LSTM output of ELMo to English. The English file contains the identity matrix divided by the average norm for that layer.
 
-| Language        | Model weights | Aligning matrix (First LSTM layer) *  |
+| Language        | Model weights | Alignment matrix (First LSTM layer) *  |
 | ------------- |:-------------:| :-----:|
 | English     | [weights.hdf5](https://www.dropbox.com/s/1h62kc1qdcuyy2u/en_weights.hdf5) | [en_best_mapping.pth](https://www.dropbox.com/s/nufj4pxxgv5838r/en_best_mapping.pth) |
 | Spanish     | [weights.hdf5](https://www.dropbox.com/s/ygfjm7zmufl5gu2/es_weights.hdf5) | [es_best_mapping.pth](https://www.dropbox.com/s/6kqot8ssy66d5u0/es_best_mapping.pth) |
@@ -38,13 +40,17 @@ The following models were trained on Wikipedia. We provide the alignment of the 
 
 * Unsupervised alignments for layer 1 - [alignments_unsupervised.zip](https://www.dropbox.com/s/sgi86uc8stu70bg/alignments_unsupervised.zip)
 
-options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json)
+* Options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json)
+
+* Computed anchors for the Enlgish model - [english_anchors.zip](https://www.dropbox.com/s/8ad5oqhbh3xlnnf/english_anchors.zip)
+
+#### Download helpers:
 
 * To download all the ELMo models in the table, use `get_models.sh`
 
 * To download all of the alignment matrices in the table, use `get_alignments.sh`.
 
-* Alternatively, If you are interested in applying it in an Allennlp model, you can just add the path to the configuration (check the examples in `allen_configs`)
+* Alternatively, If you are interested in applying it in an Allennlp model, you can just add the path to the configuration file (check the examples in `allen_configs`)
 ### Generating anchors
 
 In order to generate your own anchors - use the `gen_anchors.py` script to generate your own anchors. You will need a trained ELMo model, text files with one sentence per line, and vocab file with token per line containing the tokens that you wish to calculate for.
@@ -67,26 +73,25 @@ An example can be seen in `demo.py`.
 1. Create an environment to install our fork of allennlp:
 
 ```
-virtualenv -p /usr/bin/python3.6 allennlp_multilang
+virtualenv -p /usr/bin/python3.6 allennlp_env
 ```
 or, if you are using conda:
 ```
-conda create -n allennlp_multilang python=3.6
+conda create -n allennlp_env python=3.6
 ```
 
-2. Activate the environment and install:
+2. Activate the environment and install allennlp:
 
 ```
-source allennlp_multilang/bin/activate
+source allennlp_env/bin/activate
 pip install -r requirements.txt
 ```
 
 3. Download the [uni-dep-tb](https://github.com/ryanmcd/uni-dep-tb) dataset (version 2) and follow the instructions to generate the [English PTB data](https://catalog.ldc.upenn.edu/LDC99T42)
-4. Update the `allen_configs/multilang_dependency_parser.jsonnet` file with the path to dataset.
-5. Train the model (the provided configuration is for 'es' as a target language):
-```
-allennlp train training_config/multilang_dependency_parser.jsonnet -s path_to_output_dir
-```
+4. Train the model (the provided configuration is for 'es' as a target language):
+`
+TRAIN_PATHNAME='universal_treebanks_v2.0/std/**/*train.conll' DEV_PATHNAME='universal_treebanks_v2.0/std/**/*dev.conll' TEST_PATHNAME='universal_treebanks_v2.0/std/**/*test.conll' allennlp train training_config/multilang_dependency_parser.jsonnet -s path_to_output_dir;
+`
 
 
 ### Using in any model
