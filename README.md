@@ -89,9 +89,12 @@ pip install -r requirements.txt
 
 3. Download the [uni-dep-tb](https://github.com/ryanmcd/uni-dep-tb) dataset (version 2) and follow the instructions to generate the [English PTB data](https://catalog.ldc.upenn.edu/LDC99T42)
 4. Train the model (the provided configuration is for 'es' as a target language):
-`
-TRAIN_PATHNAME='universal_treebanks_v2.0/std/**/*train.conll' DEV_PATHNAME='universal_treebanks_v2.0/std/**/*dev.conll' TEST_PATHNAME='universal_treebanks_v2.0/std/**/*test.conll' allennlp train training_config/multilang_dependency_parser.jsonnet -s path_to_output_dir;
-`
+```
+TRAIN_PATHNAME='universal_treebanks_v2.0/std/**/*train.conll' \
+DEV_PATHNAME='universal_treebanks_v2.0/std/**/*dev.conll' \
+TEST_PATHNAME='universal_treebanks_v2.0/std/**/*test.conll' \
+allennlp train training_config/multilang_dependency_parser.jsonnet -s path_to_output_dir;
+```
 
 
 ### Using in any model
