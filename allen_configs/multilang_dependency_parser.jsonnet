@@ -97,6 +97,7 @@
     "train_data_path": std.extVar("TRAIN_PATHNAME"),
     "validation_data_path": std.extVar("DEV_PATHNAME"),
     "test_data_path": std.extVar("TEST_PATHNAME"),
+    "evaluate_on_test": true,
     "trainer": {
         "cuda_device": 0,
         "num_epochs": 40,
