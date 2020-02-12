@@ -40,7 +40,7 @@ The following models were trained on Wikipedia. We provide the alignment of the 
 
 * Unsupervised alignments for layer 1 - [alignments_unsupervised.zip](https://www.dropbox.com/s/sgi86uc8stu70bg/alignments_unsupervised.zip)
 
-* Options file (for all models) - [options.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json)
+* Options file (for all models) - [options262.json](https://www.dropbox.com/s/ypjuzlf7kj957g3/options262.json)
 
 * Computed anchors for the Enlgish model - [english_anchors.zip](https://www.dropbox.com/s/8ad5oqhbh3xlnnf/english_anchors.zip)
 
